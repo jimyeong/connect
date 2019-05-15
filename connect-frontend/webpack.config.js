@@ -49,9 +49,8 @@ module.exports = {
         loader: "ts-loader",
         exclude: /node_modules/
       },
-
       {
-        test: /\.(jpg|png|gif|svg|pdf|ico)$/,
+        test: /\.(jpg|png|gif|pdf|ico|svg)$/,
         use: [
           {
             loader: "file-loader",
