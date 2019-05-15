@@ -5,10 +5,10 @@
     "jsx": "react",
     "module": "commonjs",
     "noImplicitAny": true,
-    "outDir": "./build/",
+    "outDir": "./dist/",
     "preserveConstEnums": true,
     "removeComments": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "target": "es6",
     "strict": true,
     "lib": ["es6", "dom"]

@@ -1,9 +1,16 @@
 const webpack = require("webpack");
 const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  devtool: "inline-source-map",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html"
+    })
+  ],
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -25,10 +32,13 @@ module.exports = {
         }
       },
       {
-        test: /\.(less | css)$/,
+        test: /\.less$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: true
+            }
           },
           "css-loader",
           "less-loader"
@@ -36,7 +46,8 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
+        loader: "ts-loader",
+        exclude: /node_modules/
       },
 
       {
@@ -62,17 +73,5 @@ module.exports = {
         ]
       }
     ]
-  },
-  devServer: {
-    historyApiFallback: true
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./index.html"
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ]
+  }
 };
