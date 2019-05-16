@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NavLink, Link } from "react-router-dom";
-import "./navigation.less";
 import { Logo } from "../../assets/svg";
+import "./navigation.less";
 
 interface INavigationProps {
   path1: string;
@@ -16,7 +16,7 @@ class Navigation extends React.Component<INavigationProps, any> {
         <div className="nav__outer">
           <h1 className="logo">
             <Link to="/">
-              <img src={`${Logo}`} alt="" />
+              <Logo className="logo__connect" width={30} height={30} />
             </Link>
           </h1>
           <div className="nav__inner">

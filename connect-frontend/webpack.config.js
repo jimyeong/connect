@@ -50,7 +50,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(jpg|png|gif|pdf|ico|svg)$/,
+        test: /\.(jpg|png|gif|pdf|ico)$/,
         use: [
           {
             loader: "file-loader",
@@ -61,7 +61,23 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader"
+            /* 
+            if is used. error occurs but why..
+            options: {
+              jsx: true // true outputs JSX tags
+            } */
+          }
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
         use: [
           {
             loader: "url-loader",

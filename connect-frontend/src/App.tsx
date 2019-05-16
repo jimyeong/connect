@@ -1,20 +1,20 @@
 import * as React from "react";
-import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./assets/base/style.less";
 import { SignUpPage, MakeGroupPage } from "./pages";
 import { Navigation } from "./components";
-const signUp = "/sign-up";
-const makeGroup = "/add-group";
 
 class App extends React.Component<any, any> {
+  public signUp = "/sign-up";
+  public makeGroup = "/add-group";
   public render() {
     return (
       <>
         <Router>
-          <Navigation path1={signUp} path2={makeGroup} />
+          <Navigation path1={this.signUp} path2={this.makeGroup} />
           <Switch>
-            <Route path={signUp} render={() => <SignUpPage />} />
-            <Route path={makeGroup} render={() => <MakeGroupPage />} />
+            <Route path={this.signUp} render={() => <SignUpPage />} />
+            <Route path={this.makeGroup} render={() => <MakeGroupPage />} />
           </Switch>
         </Router>
       </>
