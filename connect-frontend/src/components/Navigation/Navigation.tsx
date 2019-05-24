@@ -1,6 +1,5 @@
 import * as React from "react";
-import { NavLink, Link } from "react-router-dom";
-import { Logo } from "../../assets/svg";
+import { NavLink } from "react-router-dom";
 import "./navigation.less";
 
 interface INavigationProps {
@@ -14,19 +13,12 @@ class Navigation extends React.Component<INavigationProps, any> {
     return (
       <nav className="nav">
         <div className="nav__outer">
-          <h1 className="logo">
-            <Link to="/">
-              <Logo className="logo__connect" width={30} height={30} />
-            </Link>
-          </h1>
-          <div className="nav__inner">
-            <NavLink activeClassName="is-active" className="nav__link" to={props.path1}>
-              회원가입
-            </NavLink>
-            <NavLink activeClassName="is-active" className="nav__link" to={props.path2}>
-              모임만들기
-            </NavLink>
-          </div>
+          <NavLink activeClassName="is-active" className="nav__link" to={props.path1}>
+            회원가입
+          </NavLink>
+          <NavLink activeClassName="is-active" className="nav__link" to={props.path2}>
+            모임만들기
+          </NavLink>
         </div>
       </nav>
     );
