@@ -1,0 +1,26 @@
+@main-border: #25bc69;
+@white: #fff;
+.btn {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 3px solid transparent;
+  background-color: transparent;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  outline: none;
+  transition: all 0.1s ease-in-out;
+}
+.btn:hover {
+  outline: none;
+  background-color: #fff;
+}
+.color-main {
+  border-color: @main-border;
+  background-color: @white;
+}
+.color-main:hover {
+  background-color: @main-border;
+  border-color: @main-border;
+  color: @white;
+}

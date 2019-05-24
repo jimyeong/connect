@@ -13,12 +13,10 @@ class MainVisual extends React.Component<any, any> {
             <div className="main-visual__img main-bg2" />
             <div className="main-visual__img main-bg3" />
           </div>
-
           <div className="column__left">
             <div className="main-visual__img main-bg4" />
           </div>
         </div>
-
         <div className="main-visual__dim" />
       </section>
     );
