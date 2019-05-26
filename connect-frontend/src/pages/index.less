@@ -12,10 +12,26 @@
 /* team */
 .team__list {
   border: 1px solid #eee;
+  max-height: 559px;
+  overflow-y: scroll;
 }
 .team__item {
+  background-color: #eeefee;
+  padding: 0.8rem 3.5rem;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.team__item:hover {
+  background-color: #eeeeee;
+}
+.team__item:nth-child(2n) {
+  background-color: #fff;
+  padding: 0.8rem 3.5rem;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.team__item:nth-child(2n):hover {
   background-color: #f8f9f8;
-  padding: 1.4rem 3.5rem;
 }
 .team__inner {
   display: flex;
@@ -24,10 +40,21 @@
 .team__avartar {
   width: 30%;
 }
+.team__picture {
+  width: 65px;
+}
 .team__desc {
   padding-left: 40px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.team__title {
+  font-size: 1.8rem;
+}
+.team__introduce {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #666;
 }
