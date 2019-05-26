@@ -4,6 +4,9 @@ import { BaseSectionContainer, Btn, IBaseSectionContainerProps } from "../../ind
 interface INormalSectionContainerProps extends IBaseSectionContainerProps {}
 
 class NormalSectionContainer extends BaseSectionContainer<INormalSectionContainerProps, any> {
+  state = {
+    btnMode: false
+  };
   public renderSearchHeader() {
     const { props } = this;
     return (
@@ -16,7 +19,16 @@ class NormalSectionContainer extends BaseSectionContainer<INormalSectionContaine
     return <div>header</div>;
   }
   public renderFooter() {
-    return <Btn className="color-main" btnName="지도보기" />;
+    const { state } = this;
+    return (
+      <Btn
+        onClick={() => {
+          this.setState({ ...this.state, btnMode: !this.state.btnMode });
+        }}
+        className="color-main"
+        btnName={state.btnMode ? "리스트로 보기" : "지도로 보기"}
+      />
+    );
   }
 }
 

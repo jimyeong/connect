@@ -4,12 +4,17 @@ import "./Btn.less";
 interface IBtnProps {
   btnName: string;
   className?: string;
+  onClick?(): void;
 }
 
 class Btn extends React.Component<IBtnProps, any> {
   public render() {
     const { props } = this;
-    return <button className={props.className ? `btn ${props.className}` : "btn"}>{props.btnName}</button>;
+    return (
+      <button onClick={props.onClick} className={props.className ? `btn ${props.className}` : "btn"}>
+        {props.btnName}
+      </button>
+    );
   }
 }
 
