@@ -16,8 +16,10 @@ import RadioGroup from "./FormGroup/RadioGroup/RadioGroup";
 import BaseFormGroup, { IBaseFormGroupProps } from "./FormGroup/BaseFormGroup/BaseFormGroup";
 import BaseCheckFormGroup from "./FormGroup/BaseCheckFormGroup/BaseCheckFormGroup";
 import CheckGroup from "./FormGroup/CheckGroup/CheckGroup";
+import Polygon from "./Polygon/Polygon";
 
 export {
+  Polygon,
   CheckGroup,
   BaseCheckFormGroup,
   BaseFormGroup,

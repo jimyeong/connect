@@ -7,19 +7,6 @@ class DaumMapContainer extends React.Component<any, any> {
   mapContainer: null | HTMLDivElement = null;
   map: any = undefined;
   public mapRef = React.createRef<HTMLDivElement>();
-  state = {
-    positions: []
-  };
-  getPosition = (e: any) => {
-    let position = {
-      lat: e.latLng["ib"],
-      lng: e.latLng["jb"]
-    };
-    this.setState({
-      ...this.state,
-      positions: [...this.state.positions, position]
-    });
-  };
 
   componentDidMount() {
     const { props } = this;
@@ -30,15 +17,20 @@ class DaumMapContainer extends React.Component<any, any> {
         level: 13
       };
       this.map = new daum.maps.Map(this.mapContainer, options);
-      daum.maps.event.addListener(this.map, "click", this.getPosition);
+      // 클릭리스너
+      daum.maps.event.addListener(this.map, "click", this.props.getPosition);
+      daum.maps.event.addListener(this.map, "rightclick", this.props.onFinish);
     });
   }
 
   public render() {
-    console.log(this.state);
+    const { props } = this;
+    const propsChilren = React.Children.map(props.children, (child: any) => {
+      return React.cloneElement(child, { map: this.map });
+    });
     return (
       <div ref={this.mapRef} className="map-container">
-        {this.props.children}
+        {propsChilren}
       </div>
     );
   }

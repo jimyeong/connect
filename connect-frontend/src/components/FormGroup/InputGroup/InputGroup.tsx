@@ -26,7 +26,6 @@ class InputGroup extends BaseFormGroup<TypeHelper.Omit<IFormGroupProps, "validat
     }
   };
   public render() {
-    console.log(this.state);
     const props: IFormGroupProps = this.props as any;
     return (
       <div className={this.props.className ? `form-group ${this.props.className}` : "form-group"}>
