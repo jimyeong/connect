@@ -7,6 +7,7 @@ interface IBaseSectionContainerProps {
   title: string;
   searchBar?: React.ReactElement<SearchBar>;
 }
+
 abstract class BaseSectionContainer<P extends IBaseSectionContainerProps, S> extends React.Component<P, S> {
   public abstract renderSearchHeader(): JSX.Element;
   public abstract renderFooter(): JSX.Element;

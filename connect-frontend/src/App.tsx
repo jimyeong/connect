@@ -1,20 +1,22 @@
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./assets/base/style.less";
-import { SignUpPage, MakeGroupPage } from "./pages";
+import { SignUpPage, MakeGroupPage, MainPage } from "./pages";
 import { Header, MainVisual } from "./components";
-import MainPage from "./pages/MainPage";
+import LocalStorage from "./storage/LocalStroage";
+import "./assets/base/style.less";
 
 class App extends React.Component<any, any> {
   public home = "/";
   public signUp = "/sign-up";
   public makeGroup = "/add-group";
+
   public render() {
     return (
       <>
         <Router>
           <Header path1={this.signUp} path2={this.makeGroup} />
           <MainVisual />
+          <LocalStorage />
           <Switch>
             <Route exact path={this.home} render={() => <MainPage />} />
             <Route path={this.signUp} render={() => <SignUpPage />} />

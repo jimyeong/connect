@@ -1,3 +1,4 @@
 import { initMap } from "./mapInit";
+import { TypeHelper } from "./TypeHelper";
 
-export { initMap };
+export { initMap, TypeHelper };
