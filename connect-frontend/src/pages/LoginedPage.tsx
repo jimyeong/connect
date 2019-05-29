@@ -8,10 +8,12 @@ class LoginedPage extends React.Component<any, any> {
     const token = urlParser["search"].split("?")[1];
     console.log(token);
     fetch(`http://api.jpraises.com/connect/oauth/token?${token}`)
-      .then(data => {
-        let authenticated = data;
-        console.log("authenticated", authenticated);
-        localStorage.setItem("user", JSON.stringify("authenticated"));
+      .then(response => {
+        console.log("response", response);
+        // 왜 한번 다시 resolve를 해야되지?
+        response.json().then(data => {
+          console.log(data);
+        });
       })
       .catch(err => {
         console.log(err);

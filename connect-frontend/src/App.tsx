@@ -13,7 +13,7 @@ class App extends React.Component<any, any> {
   public loginned = "/f8fs7owfeoopkr3q22dsxxrsdf";
 
   public render() {
-    console.log('localStorage.getItem("user")', localStorage.getItem("user"));
+    console.log('localStorage.getItem("user")', JSON.parse(localStorage.getItem("user") as string));
     return (
       <>
         <Router>
