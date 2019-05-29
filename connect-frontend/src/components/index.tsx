@@ -17,6 +17,7 @@ import BaseFormGroup, { IBaseFormGroupProps } from "./FormGroup/BaseFormGroup/Ba
 import BaseCheckFormGroup from "./FormGroup/BaseCheckFormGroup/BaseCheckFormGroup";
 import CheckGroup from "./FormGroup/CheckGroup/CheckGroup";
 import Polygon from "./Polygon/Polygon";
+import LoginSectionContainer from "./SectionContainer/LoginSectionContiner/LoginSectionContainer";
 
 export {
   Polygon,
@@ -40,5 +41,6 @@ export {
   DaumMapContainer,
   Marker,
   SearchBar,
-  FormValidateCheck
+  FormValidateCheck,
+  LoginSectionContainer
 };

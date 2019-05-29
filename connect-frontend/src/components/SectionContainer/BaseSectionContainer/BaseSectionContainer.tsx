@@ -5,13 +5,12 @@ import SearchBar from "../../SearchBar/SearchBar";
 interface IBaseSectionContainerProps {
   className?: string;
   title: string;
-  searchBar?: React.ReactElement<SearchBar>;
+  header?: React.ReactElement<SearchBar>;
 }
 
 abstract class BaseSectionContainer<P extends IBaseSectionContainerProps, S> extends React.Component<P, S> {
-  public abstract renderSearchHeader(): JSX.Element;
-  public abstract renderFooter(): JSX.Element;
-  public abstract renderHeader(): JSX.Element;
+  public abstract renderSearchHeader(): JSX.Element | null;
+  public abstract renderFooter(): JSX.Element | null;
 
   public render() {
     const { props } = this;
@@ -20,7 +19,7 @@ abstract class BaseSectionContainer<P extends IBaseSectionContainerProps, S> ext
       <section className={props.className ? `section-container ${props.className}` : "section-container"}>
         <div className="section-header">
           <h3 className="main-title">{this.props.title}</h3>
-          {props.searchBar ? this.renderSearchHeader() : this.renderHeader()}
+          {props.header && this.renderSearchHeader()}
         </div>
         <div className="section-body clearfix">{props.children}</div>
         <div className="section-footer">{this.renderFooter()}</div>

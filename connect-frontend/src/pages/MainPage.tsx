@@ -18,11 +18,12 @@ class MainPage extends React.Component<any, IMainPageState> {
       { id: 5, title: "Lorem ipsum dolor sit amet.", text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.", img: Avatar2, area: [] }
     ]
   };
+
   componentDidMount() {}
   public render() {
     return (
       <section className="page main">
-        <NormalSectionContainer searchBar={<SearchBar />} className="seek-section" title="도움이 될 가까운 그룹 찾기">
+        <NormalSectionContainer header={<SearchBar />} className="seek-section" title="도움이 될 가까운 그룹 찾기">
           <div className="column__left">
             <ul className="team__list">
               {this.state.groups.map((item: groups, i: number) => {

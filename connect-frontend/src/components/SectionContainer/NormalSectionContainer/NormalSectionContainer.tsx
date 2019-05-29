@@ -11,12 +11,9 @@ class NormalSectionContainer extends BaseSectionContainer<INormalSectionContaine
     const { props } = this;
     return (
       <div className="search__outer">
-        <span className="search-copy">없다면? </span> {props.searchBar} <Btn className="btn color-main search-btn" btnName="검색" />
+        <span className="search-copy">없다면? </span> {props.header} <Btn className="btn color-main search-btn" btnName="검색" />
       </div>
     );
-  }
-  public renderHeader() {
-    return <div>header</div>;
   }
   public renderFooter() {
     const { state } = this;
