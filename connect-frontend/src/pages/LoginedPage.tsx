@@ -4,13 +4,12 @@ class LoginedPage extends React.Component<any, any> {
   public render() {
     const currentLocation = location.href;
     const urlParser = new URL(currentLocation);
+    const key = "search";
 
-    const token = urlParser["search"].split("?")[1];
-    console.log(token);
+    const token = urlParser[key].split("?")[1];
     // 코드요청 토근발급
     fetch(`http://api.jpraises.com/connect/oauth/token?${token}`)
       .then(response => {
-        console.log("response", response);
         // 왜 한번 다시 resolve를 해야되지?
         response.json().then(data => {
           console.log(data);

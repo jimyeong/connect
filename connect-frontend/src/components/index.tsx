@@ -9,27 +9,19 @@ import Marker from "./Marker/Marker";
 import AvatarListItem from "./ListItem/AvatarListItem/AvatarListItem";
 import SearchBar from "./SearchBar/SearchBar";
 import FormValidateCheck from "./FormValidateCheck/FormValidateCheck";
-import FormContainer, { SyntheticEvent } from "./FormGroup/FormContainer/FormContainer";
-import InputGroup from "./FormGroup/InputGroup/InputGroup";
-import FormLabelContainer from "./FormGroup/FormLabelContainer/FormLabelContainer";
-import RadioGroup from "./FormGroup/RadioGroup/RadioGroup";
-import BaseFormGroup, { IBaseFormGroupProps } from "./FormGroup/BaseFormGroup/BaseFormGroup";
-import BaseCheckFormGroup from "./FormGroup/BaseCheckFormGroup/BaseCheckFormGroup";
-import CheckGroup from "./FormGroup/CheckGroup/CheckGroup";
-import Polygon from "./Polygon/Polygon";
+import Polygon, { clickedPosition } from "./Polygon/Polygon";
 import LoginSectionContainer from "./SectionContainer/LoginSectionContiner/LoginSectionContainer";
+import FormLabel from "../components/FormGroup/FormLabel/FormLabel";
+import InputText from "../components/FormGroup/InputText/InputText";
+import InputRadio from "../components/FormGroup/InputRadio/InputRadio";
+import InputCheckBox from "../components/FormGroup/InputCheckBox/InputCheckBox";
 
 export {
+  InputCheckBox,
+  InputRadio,
+  FormLabel,
+  InputText,
   Polygon,
-  CheckGroup,
-  BaseCheckFormGroup,
-  BaseFormGroup,
-  IBaseFormGroupProps,
-  FormLabelContainer,
-  RadioGroup,
-  InputGroup,
-  FormContainer,
-  SyntheticEvent,
   AvatarListItem,
   IBaseSectionContainerProps,
   Navigation,
@@ -42,5 +34,6 @@ export {
   Marker,
   SearchBar,
   FormValidateCheck,
-  LoginSectionContainer
+  LoginSectionContainer,
+  clickedPosition
 };
